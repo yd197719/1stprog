@@ -1,0 +1,65 @@
+name:                1stprog
+version:             0.1.0.0
+github:              "yd197719/1stprog"
+license:             BSD3
+author:              "Yuna Doi"
+maintainer:          "doiyuna@gmail.com"
+copyright:           "Copyright (c) 2019 Yuna Doi "
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/yd197719/1stprog#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- unicode-show
+- doctest
+- bytestring
+- utf8-string
+- hspec
+- main-tester
+
+library:
+  source-dirs: src
+
+executables:
+  1stprog-exe:
+    main:                Main.hs
+    source-dirs:         app
+    # ghc-options:
+    # - -threaded
+    # - -rtsopts
+    # - -with-rtsopts=-N
+    dependencies:
+    - 1stprog
+
+tests:
+  1stprog-test:
+    main:                spec.hs
+    source-dirs:         test
+    # ghc-options:
+    # - -threaded
+    # - -rtsopts
+    # - -with-rtsopts=-N
+    dependencies:
+    - 1stprog
+    - hspec
+
+  1stprog-doctest:
+    main:                doctests.hs
+    source-dirs:         test
+    # ghc-options:
+    # - -threaded
+    # - -rtsopts
+    # - -with-rtsopts=-N
+    dependencies:
+    - 1stprog
